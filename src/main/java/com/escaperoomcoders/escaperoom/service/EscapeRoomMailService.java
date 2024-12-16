@@ -20,6 +20,9 @@ public class EscapeRoomMailService {
             case "reto2":
                 sendChallenge2CompletionMail();
                 break;
+            case "reto3":
+                sendChallenge3completionMail();
+                break;
             default:
                 throw new IllegalArgumentException("Reto desconocido: " + challenge);
         }
@@ -49,7 +52,7 @@ public class EscapeRoomMailService {
     }
 
     private void sendChallenge2CompletionMail(){
-        if (!GameProgress.isChallengeCompleted("reto2")){
+        if (GameProgress.isChallengeCompleted("reto2")){
             GameProgress.markChallengeCompleted("reto2");
             String subject = "Instrucciones para el reto 3";
             String body = """  
@@ -90,6 +93,26 @@ public class EscapeRoomMailService {
                                    // Getters y Setters
                                }
                     """;
+
+            mailService.sendMail("andres.patino@somosf5.org", subject, body);
+        }
+
+    }
+
+    public void sendChallenge3completionMail(){
+        if(GameProgress.isChallengeCompleted("reto3")){
+            GameProgress.markChallengeCompleted("reto3");
+            String subject = "¡Reto 3 completado!";
+            String body = """
+                ¡Enhorabuena por completar el reto 3!
+                Has dominado la gestión de mensajes secretos en la base de datos.
+
+                Tu siguiente reto es aprender a proteger estos mensajes:
+                - Investiga sobre validaciones y restricciones en los modelos.
+                - Asegúrate de que solo mensajes con información válida sean almacenados.
+                
+                ¡Prepárate para el reto 4! Recibirás más instrucciones pronto.
+                """;
 
             mailService.sendMail("andres.patino@somosf5.org", subject, body);
         }
