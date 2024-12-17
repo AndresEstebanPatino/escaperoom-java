@@ -84,7 +84,7 @@ Como Gmail requiere seguridad adicional para acceder desde aplicaciones externas
 
 Añade tu cuenta de Gmail y la contraseña de aplicación al archivo de configuración:
 
-properties
+```properties
 
 Copiar código
 
@@ -95,7 +95,9 @@ spring.mail.username=YOUR_EMAIL@gmail.com
 spring.mail.password=YOUR_APP_PASSWORD
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
-spring.mail.properties.mail.debug=true` 
+spring.mail.properties.mail.debug=true`
+
+```
 
 -   **`YOUR_EMAIL@gmail.com`**: Reemplázalo por tu dirección de correo de Gmail.
 -   **`YOUR_APP_PASSWORD`**: Reemplázalo por la contraseña de aplicación que generaste.
