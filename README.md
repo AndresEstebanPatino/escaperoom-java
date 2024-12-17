@@ -58,6 +58,57 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 game-progress.file=game-progress.txt
 ```
 
+### Configuración del Servicio de Envío de Correos
+
+Para que el sistema pueda enviar correos electrónicos usando **Gmail**, sigue estos pasos:
+
+#### 1. Activar la Verificación en Dos Pasos
+
+1.  Accede a tu cuenta de **Gmail**.
+2.  Dirígete a **Configuración de Seguridad** en Mi cuenta de Google.
+3.  En la sección **Iniciar sesión en Google**, activa la **Verificación en dos pasos**.
+
+#### 2. Generar una Contraseña de Aplicación
+
+Como Gmail requiere seguridad adicional para acceder desde aplicaciones externas, necesitas una **contraseña específica para aplicaciones**:
+
+1.  En la sección **Verificación en dos pasos**, busca la opción **Contraseñas de aplicaciones**.
+2.  Selecciona **Correo** en el primer desplegable y **Otro (nombre personalizado)** en el segundo.
+3.  Escribe un nombre para identificar tu aplicación (por ejemplo: `escape-room-backend`).
+4.  Genera la contraseña y copia el código (sin espacios). **Guárdalo en un lugar seguro.**
+
+#### 3. Configurar las Variables de Entorno en `application.properties`
+
+Añade tu cuenta de Gmail y la contraseña de aplicación al archivo de configuración:
+
+properties
+
+Copiar código
+
+`# Configuración del correo
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=YOUR_EMAIL@gmail.com
+spring.mail.password=YOUR_APP_PASSWORD
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.debug=true` 
+
+-   **`YOUR_EMAIL@gmail.com`**: Reemplázalo por tu dirección de correo de Gmail.
+-   **`YOUR_APP_PASSWORD`**: Reemplázalo por la contraseña de aplicación que generaste.
+
+#### 4. Probar el Servicio de Correo
+
+Para verificar que todo está configurado correctamente, ejecuta el proyecto y accede al siguiente endpoint:
+
+bash
+
+Copiar código
+
+`GET http://localhost:8080/test-email` 
+
+Si todo está bien configurado, recibirás un correo de prueba con las instrucciones para el **Reto 1**.
+
 ### Configurar MySQL
 1. Crea la base de datos `escaperoom` en **MySQL Workbench**:
    ```sql
