@@ -106,12 +106,13 @@ spring.mail.properties.mail.debug=true`
 
 Para verificar que todo está configurado correctamente, ejecuta el proyecto y accede al siguiente endpoint:
 
-bash
+```bash
 
 Copiar código
 
 `GET http://localhost:8080/test-email` 
 
+```
 Si todo está bien configurado, recibirás un correo de prueba con las instrucciones para el **Reto 1**.
 
 ---
