@@ -14,10 +14,12 @@ import java.util.List;
 public class MisionController {
 
     private final MisionService misionService;
+    private final EscapeRoomMailService escapeRoomMailService;
 
 
-    public MisionController(MisionService misionService) {
+    public MisionController(MisionService misionService, EscapeRoomMailService escapeRoomMailService) {
         this.misionService = misionService;
+        this.escapeRoomMailService = escapeRoomMailService;
 
     }
 
@@ -67,6 +69,5 @@ public class MisionController {
 
         return ResponseEntity.ok(updatedMision);
     }
-
 
 }

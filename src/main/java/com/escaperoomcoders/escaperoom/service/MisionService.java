@@ -55,8 +55,9 @@ public class MisionService {
         if (!misionrepository.existsById(id)) {
             throw new RuntimeException("Misión no encontrada con ID: " + id);
         }
-        misionrepository.deleteById(id);
         escapeRoomMailService.sendMailForChallenge("reto5");
+        misionrepository.deleteById(id);
+
     }
 
     @Transactional

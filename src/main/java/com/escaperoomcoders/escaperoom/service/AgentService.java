@@ -40,7 +40,8 @@ public class AgentService {
         if(!agentRepository.existsById(id)){
             throw new RuntimeException("No se encuentra el usuario con ID: " + id);
         }
-        agentRepository.deleteById(id);
         escapeRoomMailService.sendMailForChallenge("reto4");
+        agentRepository.deleteById(id);
+
     }
 }

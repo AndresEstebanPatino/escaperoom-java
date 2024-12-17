@@ -38,7 +38,7 @@ public class EscapeRoomMailService {
     }
 
     private void sendChallenge1CompletionMail(){
-        if(GameProgress.isChallengeCompleted("reto1")){
+        if(!GameProgress.isChallengeCompleted("reto1")){
             GameProgress.markChallengeCompleted("reto1");
             String subject = "Instrucciones para el reto 2";
             String body = """  
@@ -61,7 +61,7 @@ public class EscapeRoomMailService {
     }
 
     private void sendChallenge2CompletionMail(){
-        if (GameProgress.isChallengeCompleted("reto2")){
+        if (!GameProgress.isChallengeCompleted("reto2")){
             GameProgress.markChallengeCompleted("reto2");
             String subject = "Instrucciones para el reto 3";
             String body = """  
@@ -109,7 +109,7 @@ public class EscapeRoomMailService {
     }
 
     public void sendChallenge3completionMail(){
-        if(GameProgress.isChallengeCompleted("reto3")){
+        if(!GameProgress.isChallengeCompleted("reto3")){
             GameProgress.markChallengeCompleted("reto3");
             String subject = "¡Reto 3 completado!";
             String body = """
@@ -126,7 +126,7 @@ public class EscapeRoomMailService {
         }
     }
     private void sendChallenge4CompletionMail() {
-        if (GameProgress.isChallengeCompleted("reto4")) {
+        if (!GameProgress.isChallengeCompleted("reto4")) {
             GameProgress.markChallengeCompleted("reto4");
             String subject = "¡Reto 4 completado! Misión cumplida";
             String body = """
@@ -142,7 +142,7 @@ public class EscapeRoomMailService {
         }
     }
     private void sendChallenge5CompletionMail() {
-        if (GameProgress.isChallengeCompleted("reto5")) {
+        if (!GameProgress.isChallengeCompleted("reto5")) {
             GameProgress.markChallengeCompleted("reto5");
             String subject = "¡Reto 5 completado! Misión cumplida";
             String body = """
@@ -156,8 +156,8 @@ public class EscapeRoomMailService {
         }
 }
     private void sendChallenge6CompletionMail() {
-        if (GameProgress.isChallengeCompleted("reto5")) {
-            GameProgress.markChallengeCompleted("reto5");
+        if (!GameProgress.isChallengeCompleted("reto6")) {
+            GameProgress.markChallengeCompleted("reto6");
             String subject = "¡Reto 6 completado! Misión cumplida";
             String body = """
             ¡Felicidades, agente! 🚀
