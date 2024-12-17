@@ -185,7 +185,7 @@ escaperoom/
 ---
 ## Repositorio inciial 
 El reto inicial está en el siguiente repositorio:
-[**Repositorio de la Solución**]((https://github.com/AndresEstebanPatino/escaperoom-java-solution))
+**Repositorio de la Solución**([https://github.com/AndresEstebanPatino/escaperoom-java-solution](https://github.com/AndresEstebanPatino/escaperoom-java-solution))
 ---
 ---
 
