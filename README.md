@@ -35,6 +35,8 @@ La humanidad está al borde del colapso digital. La red mundial de comunicacione
 3. **IntelliJ IDEA** u otro IDE compatible.
 4. **Postman** para probar los endpoints.
 5. Una cuenta de correo habilitada con contraseña de aplicación (para el servicio de mailing).
+6. 
+---
 
 ### Variables de Entorno
 Configura las siguientes variables en el archivo `application.properties` o usando variables de entorno:
@@ -57,6 +59,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 # Configuración del sistema de progreso
 game-progress.file=game-progress.txt
 ```
+---
 
 ### Configuración del Servicio de Envío de Correos
 
@@ -108,6 +111,8 @@ Copiar código
 `GET http://localhost:8080/test-email` 
 
 Si todo está bien configurado, recibirás un correo de prueba con las instrucciones para el **Reto 1**.
+
+---
 
 ### Configurar MySQL
 1. Crea la base de datos `escaperoom` en **MySQL Workbench**:
