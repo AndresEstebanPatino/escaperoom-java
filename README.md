@@ -182,7 +182,11 @@ escaperoom/
 │   ├── test/                       # Pruebas unitarias
 └── pom.xml                         # Dependencias Maven
 ```
-
+---
+## Repositorio inciial 
+El reto inicial está en el siguiente repositorio:
+[**Repositorio de la Solución**]((https://github.com/AndresEstebanPatino/escaperoom-java-solution))
+---
 ---
 
 ## Créditos
