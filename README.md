@@ -35,7 +35,6 @@ La humanidad está al borde del colapso digital. La red mundial de comunicacione
 3. **IntelliJ IDEA** u otro IDE compatible.
 4. **Postman** para probar los endpoints.
 5. Una cuenta de correo habilitada con contraseña de aplicación (para el servicio de mailing).
-6. 
 ---
 
 ### Variables de Entorno
