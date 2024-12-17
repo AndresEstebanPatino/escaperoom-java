@@ -1,5 +1,6 @@
 package com.escaperoomcoders.escaperoom.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -17,6 +18,7 @@ public class Agent {
     }
 
     @ManyToMany(mappedBy = "agents")
+    @JsonIgnore
     private Set<Mision> misions = new HashSet<>();
 
     public Agent(String name, String specialty) {
@@ -42,5 +44,12 @@ public class Agent {
 
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
+    }
+    public Set<Mision> getMissions() {
+        return misions;
+    }
+
+    public void setMissions(Set<Mision> misions) {
+        this.misions = misions;
     }
 }

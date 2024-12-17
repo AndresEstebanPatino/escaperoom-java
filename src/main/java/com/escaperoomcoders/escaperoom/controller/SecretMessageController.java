@@ -13,13 +13,12 @@ import java.util.List;
 @RequestMapping("/api/secret-message")
 public class SecretMessageController {
     private final SecretMessageService secretMessageService;
-    private final EscapeRoomMailService escapeRoomMailService;
 
-    public SecretMessageController(SecretMessageService secretMessageService, EscapeRoomMailService escapeRoomMailService) {
+
+    public SecretMessageController(SecretMessageService secretMessageService) {
         this.secretMessageService = secretMessageService;
-        this.escapeRoomMailService = escapeRoomMailService;
-    }
 
+    }
     @PostMapping
     public ResponseEntity<SecretMessage> createSecretMessage(@RequestBody SecretMessage secretMessage){
         SecretMessage newSecretMessage = secretMessageService.createSecretMessage(secretMessage);
@@ -49,7 +48,6 @@ public class SecretMessageController {
     @GetMapping
     public ResponseEntity<List<SecretMessage>> getAllSecretMessages(){
         List<SecretMessage> allSecretsMessages = secretMessageService.getAllSecretMessages();
-        escapeRoomMailService.sendMailForChallenge("reto3");
         return ResponseEntity.ok(allSecretsMessages);
     }
 }

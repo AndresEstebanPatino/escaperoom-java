@@ -23,6 +23,15 @@ public class EscapeRoomMailService {
             case "reto3":
                 sendChallenge3completionMail();
                 break;
+            case "reto4":
+                sendChallenge4CompletionMail();
+                break;
+            case "reto5":
+                sendChallenge5CompletionMail();
+                break;
+            case "reto6":
+                sendChallenge6CompletionMail();
+                break;
             default:
                 throw new IllegalArgumentException("Reto desconocido: " + challenge);
         }
@@ -108,11 +117,63 @@ public class EscapeRoomMailService {
                 Has dominado la gestión de mensajes secretos en la base de datos.
 
                 Tu siguiente reto es aprender a proteger estos mensajes:
-                - Investiga sobre validaciones y restricciones en los modelos.
-                - Asegúrate de que solo mensajes con información válida sean almacenados.
-                
-                ¡Prepárate para el reto 4! Recibirás más instrucciones pronto.
+                - Crear en la base de datos a los agentes de tu entera confianza.                
+                ¡Prepárate para el reto 4! Recibirás más instrucciones cuando puedas hacer un crud completo, 
+                probando por último el método eliminar .
                 """;
+
+            mailService.sendMail("andres.patino@somosf5.org", subject, body);
+        }
+    }
+    private void sendChallenge4CompletionMail() {
+        if (GameProgress.isChallengeCompleted("reto4")) {
+            GameProgress.markChallengeCompleted("reto4");
+            String subject = "¡Reto 4 completado! Misión cumplida";
+            String body = """
+            Has preparado el sistema para poder crear agentes de tu confianza, 
+            ahora la siguiete misión es crear las misiones, debes crear las misiones
+            que quieres que se ejecuten para salvar a la humanidad.
+            
+            Recibirás noticias cuando hayas terminado el crud de misiones probando por último el método eliminar.
+            
+            """;
+
+            mailService.sendMail("andres.patino@somosf5.org", subject, body);
+        }
+    }
+    private void sendChallenge5CompletionMail() {
+        if (GameProgress.isChallengeCompleted("reto5")) {
+            GameProgress.markChallengeCompleted("reto5");
+            String subject = "¡Reto 5 completado! Misión cumplida";
+            String body = """
+                Has creado satisfactoriamente las misiones
+                tu próxima misión es asignarle una misión a un agente, creando una relación
+                de muchos a muchos.
+                Recibirás información cuando la completes.
+            """;
+
+            mailService.sendMail("andres.patino@somosf5.org", subject, body);
+        }
+}
+    private void sendChallenge6CompletionMail() {
+        if (GameProgress.isChallengeCompleted("reto5")) {
+            GameProgress.markChallengeCompleted("reto5");
+            String subject = "¡Reto 6 completado! Misión cumplida";
+            String body = """
+            ¡Felicidades, agente! 🚀
+            Has completado con éxito todas las misiones del Escape Room.
+
+            Logros:
+            - Gestionaste mensajes secretos.
+            - Asignaste misiones a agentes.
+            - Construiste APIs funcionales para manejar archivos clasificados.
+
+            Ahora... un último desafío:
+            - Refuerza tu código: revisa y optimiza las entidades y relaciones.
+            - Investiga cómo mejorar el rendimiento y la seguridad de tu aplicación.
+
+            ¡Tu entrenamiento ha terminado, agente! La humanidad te lo agradece.
+            """;
 
             mailService.sendMail("andres.patino@somosf5.org", subject, body);
         }

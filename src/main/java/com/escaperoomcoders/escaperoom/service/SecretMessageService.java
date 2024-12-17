@@ -10,9 +10,11 @@ import java.util.List;
 public class SecretMessageService {
 
     private final SecretMessageRepository secretMessageRepository;
+    private final EscapeRoomMailService escapeRoomMailService;
 
-    public SecretMessageService(SecretMessageRepository secretMessageRepository) {
+    public SecretMessageService(SecretMessageRepository secretMessageRepository, EscapeRoomMailService escapeRoomMailService) {
         this.secretMessageRepository = secretMessageRepository;
+        this.escapeRoomMailService = escapeRoomMailService;
     }
 
     public List<SecretMessage> getAllSecretMessages(){
@@ -45,6 +47,7 @@ public class SecretMessageService {
             throw new RuntimeException("Mensaje secreto no encontrado");
         }
         secretMessageRepository.deleteById(id);
+        escapeRoomMailService.sendMailForChallenge("reto3");
     }
 
 }

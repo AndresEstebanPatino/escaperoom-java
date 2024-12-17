@@ -1,5 +1,6 @@
 package com.escaperoomcoders.escaperoom.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -19,6 +20,7 @@ public class Mision {
             joinColumns = @JoinColumn(name = "mision_id"),
             inverseJoinColumns = @JoinColumn(name = "agent_id")
     )
+    @JsonIgnore
     private Set<Agent> agents = new HashSet<>();
 
     public Mision() {
@@ -42,5 +44,12 @@ public class Mision {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public Set<Agent> getAgents() {
+        return agents;
+    }
+
+    public void setAgents(Set<Agent> agents) {
+        this.agents = agents;
     }
 }
