@@ -127,16 +127,16 @@ escaperoom/
 ---
 
 ## Créditos
-Este proyecto fue desarrollado como parte de un **bootcamp backend** para enseñar habilidades de desarrollo en Java y Spring Boot de manera práctica e interactiva.
+Este proyecto fue desarrollado como parte de un apoyo pedagógico a un **bootcamp backend** para enseñar habilidades de desarrollo en Java y Spring Boot de manera práctica e interactiva.
 
-Desarrollado por: **[Tu Nombre / Tu Organización]**
+Desarrollado por: **Andrés Esteban Patiño Gómez**
 
 ---
 
 ## Contacto
 Si tienes preguntas o sugerencias sobre este proyecto, no dudes en contactarnos:
-- **Email:** contacto@tudominio.com
-- **GitHub:** [https://github.com/tu-usuario](https://github.com/tu-usuario)
+- **Email:** andresp199519@gmail.com
+- **GitHub:** [AndresEstebanPatino](https://github.com/AndresEstebanPatino)
 
 ---
 
